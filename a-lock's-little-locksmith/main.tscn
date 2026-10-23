@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bwv8ct7kba3cs" path="res://character_body_2d.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://c8lmbpp55c1cn" path="res://icon.svg" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://umgdiqj8bpgb" path="res://moving_platform.gd" id="3_h2yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(124, 127)
+size = Vector2(57, 56.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(935, 23)
@@ -12,17 +13,21 @@ size = Vector2(935, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(135, 26)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(118.5, 28)
+
 [node name="Main" type="Node2D" unique_id=671246143]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=552044761]
 script = ExtResource("1_0xm2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2133008603]
-position = Vector2(305, 272)
+position = Vector2(133, 402.00003)
+scale = Vector2(0.46875, 0.46875)
 texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=132973150]
-position = Vector2(307, 274)
+position = Vector2(134.5, 401.75)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1197269504]
@@ -39,21 +44,33 @@ shape = SubResource("RectangleShape2D_lquwl")
 [node name="platforms" type="StaticBody2D" parent="." unique_id=543781631]
 
 [node name="Sprite2D" type="Sprite2D" parent="platforms" unique_id=27949622]
-position = Vector2(730, 369)
+position = Vector2(325, 416)
 scale = Vector2(1, 0.1484375)
 texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms" unique_id=505492570]
-position = Vector2(728, 371)
+position = Vector2(325, 416)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="platforms2" type="StaticBody2D" parent="." unique_id=1833296956]
 
 [node name="Sprite2D" type="Sprite2D" parent="platforms2" unique_id=1808816595]
-position = Vector2(926, 263)
+position = Vector2(511, 345)
 scale = Vector2(1, 0.1484375)
 texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms2" unique_id=72464468]
-position = Vector2(928, 264)
+position = Vector2(513, 345)
 shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="moving_platform" type="AnimatableBody2D" parent="." unique_id=394260381]
+script = ExtResource("3_h2yge")
+
+[node name="Sprite2D" type="Sprite2D" parent="moving_platform" unique_id=866201926]
+position = Vector2(746, 321.00003)
+scale = Vector2(1, 0.19921845)
+texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="moving_platform" unique_id=664797217]
+position = Vector2(742.75, 319)
+shape = SubResource("RectangleShape2D_7mycd")
