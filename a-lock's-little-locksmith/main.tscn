@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://daduduvj7wdod" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_27.png" id="3_1yv1y"]
 [ext_resource type="Script" uid="uid://umgdiqj8bpgb" path="res://moving_platform.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://08dw45q1rhpb" path="res://rotating_platform.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bgan8m2q0m8yv" path="res://moving_platform_3.gd" id="5_23xmf"]
 [ext_resource type="Texture2D" uid="uid://col1kc6kmcxnk" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_01.png" id="6_5yh34"]
 [ext_resource type="Texture2D" uid="uid://bgd1b45siqyh" path="res://Assets/Free Industrial Zone Tileset/3 Objects/spike_gear.png" id="6_pjuso"]
 [ext_resource type="Texture2D" uid="uid://dbn8tkgtt5cke" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_02.png" id="7_pjuso"]
@@ -959,7 +960,7 @@ shape = SubResource("RectangleShape2D_7mycd")
 [node name="moving_platform3" type="AnimatableBody2D" parent="." unique_id=1696941959]
 z_index = 3
 position = Vector2(-710, 190)
-script = ExtResource("3_h2yge")
+script = ExtResource("5_23xmf")
 
 [node name="Sprite2D4" type="Sprite2D" parent="moving_platform3" unique_id=796141598]
 z_index = 2
