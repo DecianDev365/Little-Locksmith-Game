@@ -96,6 +96,9 @@ size = Vector2(247, 36)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(135, 26)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yh34"]
+size = Vector2(47, 554)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(118.5, 23)
 
@@ -887,8 +890,71 @@ z_index = 2
 position = Vector2(335, 370)
 shape = SubResource("RectangleShape2D_0xm2m")
 
+[node name="platforms4" type="StaticBody2D" parent="." unique_id=1252949617]
+position = Vector2(193, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="platforms4" unique_id=189874337]
+z_index = 2
+position = Vector2(192.99998, 78.99999)
+scale = Vector2(1.4375004, 0.8437501)
+texture = ExtResource("34_smeu8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="platforms4" unique_id=1107400536]
+z_index = 2
+position = Vector2(193, 111)
+scale = Vector2(1.3750001, 0.81250006)
+texture = ExtResource("34_smeu8")
+
+[node name="Sprite2D4" type="Sprite2D" parent="platforms4" unique_id=122980209]
+z_index = 2
+position = Vector2(193, 144)
+scale = Vector2(1.3750001, 0.81250006)
+texture = ExtResource("34_smeu8")
+
+[node name="Sprite2D5" type="Sprite2D" parent="platforms4" unique_id=901817264]
+z_index = 2
+position = Vector2(193, 177)
+scale = Vector2(1.3750001, 0.81250006)
+texture = ExtResource("34_smeu8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="platforms4" unique_id=483462104]
+z_index = 2
+position = Vector2(193, 50)
+scale = Vector2(1.3750001, 0.87500066)
+texture = ExtResource("34_smeu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms4" unique_id=889952418]
+position = Vector2(192.5, 310)
+shape = SubResource("RectangleShape2D_5yh34")
+
+[node name="platforms3" type="StaticBody2D" parent="." unique_id=1748808049]
+position = Vector2(30, 145)
+
+[node name="Sprite2D" type="Sprite2D" parent="platforms3" unique_id=302188562]
+z_index = 2
+position = Vector2(-11, 144.99998)
+scale = Vector2(1.4375004, 0.8437501)
+texture = ExtResource("34_smeu8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="platforms3" unique_id=318852116]
+z_index = 2
+position = Vector2(30, 145)
+scale = Vector2(1.3750001, 0.81250006)
+texture = ExtResource("34_smeu8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="platforms3" unique_id=269766007]
+z_index = 2
+position = Vector2(77, 145)
+scale = Vector2(1.3750001, 0.87500066)
+texture = ExtResource("34_smeu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms3" unique_id=1810646582]
+z_index = 2
+position = Vector2(30, 145)
+shape = SubResource("RectangleShape2D_0xm2m")
+
 [node name="platforms2" type="StaticBody2D" parent="." unique_id=613336431]
-position = Vector2(1, 0)
+position = Vector2(-9, 15)
 
 [node name="Sprite2D" type="Sprite2D" parent="platforms2" unique_id=276482690]
 z_index = 2
@@ -914,14 +980,30 @@ position = Vector2(669, 390)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="moving_platform" type="AnimatableBody2D" parent="." unique_id=394260381]
+z_index = 3
+position = Vector2(39, 0)
 script = ExtResource("3_h2yge")
 
-[node name="Sprite2D" type="Sprite2D" parent="moving_platform" unique_id=866201926]
-position = Vector2(800, 317)
-scale = Vector2(1, 0.19921845)
-texture = ExtResource("2_h2yge")
+[node name="Sprite2D4" type="Sprite2D" parent="moving_platform" unique_id=1002121106]
+z_index = 2
+position = Vector2(803, 317.99997)
+scale = Vector2(1.4375004, 0.8437501)
+texture = ExtResource("34_smeu8")
+
+[node name="Sprite2D5" type="Sprite2D" parent="moving_platform" unique_id=1114207019]
+z_index = 2
+position = Vector2(761, 317.99997)
+scale = Vector2(1.3750001, 0.81250006)
+texture = ExtResource("34_smeu8")
+
+[node name="Sprite2D6" type="Sprite2D" parent="moving_platform" unique_id=1261357288]
+z_index = 2
+position = Vector2(841.99994, 318.00003)
+scale = Vector2(1.3750001, 0.87500066)
+texture = ExtResource("34_smeu8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="moving_platform" unique_id=664797217]
+z_index = 2
 position = Vector2(797, 316.5)
 shape = SubResource("RectangleShape2D_7mycd")
 
