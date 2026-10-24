@@ -313,7 +313,6 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ff2c"]
 texture = ExtResource("31_am8a1")
 texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
@@ -337,10 +336,10 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8lrju"]
 texture = ExtResource("34_smeu8")
 texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kegx"]
 texture = ExtResource("35_f3y11")
@@ -827,6 +826,12 @@ size = Vector2(158, 17)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23xmf"]
 size = Vector2(128, 15.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yysqy"]
+size = Vector2(94, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5t1e"]
+size = Vector2(87, 25)
+
 [node name="Main" type="Node2D" unique_id=671246143]
 
 [node name="LockSmith" type="CharacterBody2D" parent="." unique_id=552044761]
@@ -996,6 +1001,44 @@ texture = ExtResource("6_pjuso")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform3" unique_id=59336888]
 shape = SubResource("CircleShape2D_pjuso")
 
+[node name="Rotating platform4" type="AnimatableBody2D" parent="." unique_id=151420114]
+position = Vector2(189, 123)
+script = ExtResource("4_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotating platform4" unique_id=2009858493]
+position = Vector2(1, 0)
+scale = Vector2(0.29500097, 0.2589643)
+texture = ExtResource("6_pjuso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform4" unique_id=34447077]
+shape = SubResource("CircleShape2D_pjuso")
+
+[node name="Rotating platform5" type="AnimatableBody2D" parent="." unique_id=1880023669]
+position = Vector2(222, 119)
+rotation = 1.2444198
+script = ExtResource("4_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotating platform5" unique_id=97994935]
+position = Vector2(1, 0)
+scale = Vector2(0.29500097, 0.2589643)
+texture = ExtResource("6_pjuso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform5" unique_id=302167743]
+shape = SubResource("CircleShape2D_pjuso")
+
+[node name="Rotating platform6" type="AnimatableBody2D" parent="." unique_id=1444663235]
+position = Vector2(280, 239)
+rotation = 1.2444198
+script = ExtResource("4_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotating platform6" unique_id=841318077]
+position = Vector2(1.7675781, 0.20333862)
+scale = Vector2(0.33155978, 0.30837274)
+texture = ExtResource("6_pjuso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform6" unique_id=1714492183]
+shape = SubResource("CircleShape2D_pjuso")
+
 [node name="Rotating platform2" type="AnimatableBody2D" parent="." unique_id=1639267174]
 position = Vector2(502, 376)
 script = ExtResource("4_1bvp3")
@@ -1011,7 +1054,7 @@ shape = SubResource("CircleShape2D_23xmf")
 
 [node name="GroundTiles" type="TileMapLayer" parent="." unique_id=657202417]
 z_index = -1
-tile_map_data = PackedByteArray("AAAKAP7/OAAAAAAAAAANAAIAIwAAAAAAAAANAAMAIwAAAAAAAAANAAQANgAAAAAAAAANAAUAIwAAAAAAAAANAAYAIwAAAAAAAAANAAcANgAAAAAAAAANAAgAIwAAAAAAAAANAAkAIwAAAAAAAAANAAoAIwAAAAAAAAANAAsAMwAAAAAAAAASAAsAEQAAAAAAAAATAAsAEQAAAAAAAAAUAAsAEQAAAAAAAAAVAAsAEQAAAAAAAAAAABMAEQAAAAAAAAABABMAEQAAAAAAAAACABMAEQAAAAAAAAADABMAEQAAAAAAAAAEABMAEQAAAAAAAAANAAwAIwAAAAAAAAANAA0AIwAAAAAAAAANAA4AMwAAAAAAAAANAA8AMwAAAAAAAAANABAANgAAAAAAAAANABIANgAAAAAAAAANABEAAQAAAAAAAAANABMAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAKAP7/OAAAAAAAAAANAAIAIwAAAAAAAAANAAMAIwAAAAAAAAANAAQANgAAAAAAAAANAAUAIwAAAAAAAAANAAYAIwAAAAAAAAANAAcANgAAAAAAAAANAAgAIwAAAAAAAAANAAkAIwAAAAAAAAANAAoAIwAAAAAAAAANAAsAMwAAAAAAAAASAAsAEQAAAAAAAAATAAsAEQAAAAAAAAAUAAsAEQAAAAAAAAAVAAsAEQAAAAAAAAAAABMAEQAAAAAAAAABABMAEQAAAAAAAAACABMAEQAAAAAAAAADABMAEQAAAAAAAAAEABMAEQAAAAAAAAANAAwAIwAAAAAAAAANAA0AIwAAAAAAAAANAA4AMwAAAAAAAAANAA8AMwAAAAAAAAANABAANgAAAAAAAAANABIANgAAAAAAAAANABEAAQAAAAAAAAANABMAAQAAAAAAAAAAAAUABAAAAAAAAAACAAUABAAAAAAAAAABAAUAAgAAAAAAAAAKAAIAHgAAAAAAAAAMAAIAHgAAAAAAAAALAAIANgAAAAAAAAA=")
 tile_set = SubResource("TileSet_acld0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="GroundTiles" unique_id=1312482807]
@@ -1028,6 +1071,14 @@ shape = SubResource("RectangleShape2D_5yh34")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="GroundTiles/StaticBody2D" unique_id=263032162]
 position = Vector2(640, 360.25)
 shape = SubResource("RectangleShape2D_23xmf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="GroundTiles/StaticBody2D" unique_id=742056055]
+position = Vector2(47, 174.5)
+shape = SubResource("RectangleShape2D_yysqy")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="GroundTiles/StaticBody2D" unique_id=865109465]
+position = Vector2(371.5, 84.5)
+shape = SubResource("RectangleShape2D_n5t1e")
 
 [node name="wallpaper" type="Sprite2D" parent="." unique_id=98008653]
 z_index = -3
