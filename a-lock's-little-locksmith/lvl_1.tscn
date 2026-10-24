@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://be12xhhndfwlb"]
+
+[ext_resource type="PackedScene" uid="uid://dmcjy46xpyhqu" path="res://main.tscn" id="1_6mpcb"]
+
+[node name="lvl1" type="Node2D" unique_id=1199852598]
+
+[node name="Main" parent="." unique_id=671246143 instance=ExtResource("1_6mpcb")]
+
+[node name="Ground tile" type="TileMapLayer" parent="Main" unique_id=1940766854]
