@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bwv8ct7kba3cs" path="res://character_body_2d.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://c8lmbpp55c1cn" path="res://icon.svg" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://umgdiqj8bpgb" path="res://moving_platform.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://08dw45q1rhpb" path="res://rotating_platform.gd" id="4_1bvp3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(57, 56.5)
@@ -14,7 +15,10 @@ size = Vector2(935, 23)
 size = Vector2(135, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
-size = Vector2(118.5, 28)
+size = Vector2(118.5, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(84.25, 49)
 
 [node name="Main" type="Node2D" unique_id=671246143]
 
@@ -67,10 +71,21 @@ shape = SubResource("RectangleShape2D_0xm2m")
 script = ExtResource("3_h2yge")
 
 [node name="Sprite2D" type="Sprite2D" parent="moving_platform" unique_id=866201926]
-position = Vector2(746, 321.00003)
+position = Vector2(800, 317)
 scale = Vector2(1, 0.19921845)
 texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="moving_platform" unique_id=664797217]
-position = Vector2(742.75, 319)
+position = Vector2(797, 316.5)
 shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="Rotating platform" type="AnimatableBody2D" parent="." unique_id=1849624438]
+position = Vector2(669, 399)
+script = ExtResource("4_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotating platform" unique_id=221148595]
+scale = Vector2(0.7109375, 0.4296875)
+texture = ExtResource("2_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform" unique_id=1408131637]
+shape = SubResource("RectangleShape2D_272bh")
