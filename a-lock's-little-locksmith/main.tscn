@@ -1112,23 +1112,17 @@ size = Vector2(14, 160)
 position = Vector2(0, 190)
 script = ExtResource("1_0xm2m")
 
-[node name="Sprite2D" type="Sprite2D" parent="LockSmith" unique_id=2133008603]
-z_index = 3
-position = Vector2(22.500006, 397.25)
-scale = Vector2(0.3046874, 0.30859402)
-texture = ExtResource("2_23xmf")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LockSmith" unique_id=132973150]
 z_index = 2
 position = Vector2(21.5, 398.75)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LockSmith" unique_id=408167361]
-position = Vector2(157.5, 96.5)
-scale = Vector2(5.921875, 7.03125)
+position = Vector2(22.000002, 391.99997)
+scale = Vector2(1.6423861, 1.9500625)
 sprite_frames = SubResource("SpriteFrames_d5iia")
 animation = &"WALKING"
-frame_progress = 0.62236786
+frame_progress = 0.92856234
 
 [node name="platforms" type="StaticBody2D" parent="." unique_id=543781631]
 
