@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	if is_on_floor() and not was_on_floor:
+	if is_on_floor() and not was_on_floor: ##jumpy jump ;) 
 		jumps_left = 2
 
 	was_on_floor = is_on_floor()
@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 
 func play_hit() -> void:
 	is_hitting = true
-	animated_sprite.play("HIT")
+	animated_sprite.play("HIT")   ## Even playn retro games hit hard uk 
 	get_tree().call_group("lever", "activate_lever")
 	await animated_sprite.animation_finished
 	is_hitting = false
@@ -84,3 +84,5 @@ func respawn() -> void:
 	animated_sprite.play("IDLE")
 	set_physics_process(true)
 	is_respawning = false
+	
+	##Hollow knight is a good game ngl
