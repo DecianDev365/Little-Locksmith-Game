@@ -18,3 +18,4 @@ func activate_lever() -> void:
 	if player_in_range:
 		lever_sprite.play("Lver on")
 		print("Lever animation playing")
+## And the lever shud most probably work ... Damn this is lot of  work .. I am new to godo btw ;>0
