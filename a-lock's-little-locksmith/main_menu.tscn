@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b3is510307gym" path="res://Assets/Free Industrial Zone Tileset/buttons/pressed_credit.png" id="5_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://oi22cjvncaia" path="res://Assets/Free Industrial Zone Tileset/buttons/quit.png" id="6_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://djjvjrfs6bfqb" path="res://Assets/Free Industrial Zone Tileset/2 Background/MAIN_MENU.png" id="7_qe12f"]
-[ext_resource type="AudioStream" uid="uid://cw1me4mpt850i" path="res://Assets/Videos/spinopel-tunneling-378206.mp3" id="8_8qtwp"]
-[ext_resource type="Script" uid="uid://cs8vntkucfo05" path="res://bg-music.gd" id="9_dy7ct"]
 
 [node name="MainMenu" type="Node2D" unique_id=68970863]
 script = ExtResource("1_06t4h")
@@ -53,11 +51,6 @@ z_index = -1
 position = Vector2(603, 331)
 scale = Vector2(0.65134674, 0.65134674)
 texture = ExtResource("7_qe12f")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1904782557]
-stream = ExtResource("8_8qtwp")
-volume_db = 1.925
-script = ExtResource("9_dy7ct")
 
 [connection signal="pressed" from="Button_Manager/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Button_Manager/Credits" to="." method="_on_credits_pressed"]
