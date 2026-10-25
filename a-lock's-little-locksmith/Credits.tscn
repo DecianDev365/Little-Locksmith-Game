@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmqq3yabkuh6"]
 
-[ext_resource type="Texture2D" uid="uid://cyr0hme40hl72" path="res://Assets/Free Industrial Zone Tileset/2 Background/Credits_bg.png" id="1_obosj"]
+[ext_resource type="Texture2D" uid="uid://dyaoark1semr1" path="res://Assets/Free Industrial Zone Tileset/buttons/new_credits.png" id="1_xic2l"]
 [ext_resource type="Texture2D" uid="uid://1ny5axk01shu" path="res://Assets/Free Industrial Zone Tileset/buttons/return.png" id="2_k2yj5"]
 [ext_resource type="Script" uid="uid://b8psax0crtct8" path="res://return_button.gd" id="3_xic2l"]
 [ext_resource type="AudioStream" uid="uid://cw1me4mpt850i" path="res://Assets/Videos/spinopel-tunneling-378206.mp3" id="4_xic2l"]
@@ -12,7 +12,7 @@ scale = Vector2(1.64, 0.88)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1473089026]
 position = Vector2(351.82925, 356.8182)
 scale = Vector2(0.35685402, 0.66504586)
-texture = ExtResource("1_obosj")
+texture = ExtResource("1_xic2l")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1747103253]
 offset_left = 17.073175
