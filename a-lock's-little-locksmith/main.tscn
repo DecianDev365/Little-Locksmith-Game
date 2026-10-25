@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bgd1b45siqyh" path="res://Assets/Free Industrial Zone Tileset/3 Objects/spike_gear.png" id="6_pjuso"]
 [ext_resource type="Texture2D" uid="uid://dbn8tkgtt5cke" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_02.png" id="7_pjuso"]
 [ext_resource type="Texture2D" uid="uid://de57qn6k452v3" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_11.png" id="8_23xmf"]
+[ext_resource type="Script" uid="uid://c8jh41ql7aup5" path="res://spike.gd" id="8_yysqy"]
 [ext_resource type="Texture2D" uid="uid://dvwcyjs0xvcon" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_12.png" id="9_swlj1"]
 [ext_resource type="Texture2D" uid="uid://eqhhs0ictcoc" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_13.png" id="10_yysqy"]
 [ext_resource type="Texture2D" uid="uid://bq2o7wqefoyhf" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_14.png" id="11_n5t1e"]
@@ -247,7 +248,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"DIE",
-"speed": 7.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -356,6 +357,12 @@ size = Vector2(92, 17)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_23xmf"]
 radius = 41.04875
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n5t1e"]
+radius = 5.0990195
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yysqy"]
+radius = 18.027756
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pjuso"]
 radius = 19.104973
@@ -1168,7 +1175,8 @@ shape = SubResource("RectangleShape2D_1bvp3")
 position = Vector2(22.000002, 391.99997)
 scale = Vector2(1.6423861, 1.9500625)
 sprite_frames = SubResource("SpriteFrames_d5iia")
-animation = &"HIT"
+animation = &"DIE"
+frame_progress = 0.33846402
 
 [node name="platforms" type="StaticBody2D" parent="." unique_id=543781631]
 
@@ -1314,13 +1322,140 @@ shape = SubResource("CircleShape2D_23xmf")
 position = Vector2(189, 582)
 script = ExtResource("4_1bvp3")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform3" unique_id=355261685]
+scale = Vector2(-2.591241, -2.591241)
+shape = SubResource("CircleShape2D_n5t1e")
+
 [node name="Sprite2D" type="Sprite2D" parent="Rotating platform3" unique_id=1837203874]
 position = Vector2(1, 0)
 scale = Vector2(0.29500097, 0.2589643)
 texture = ExtResource("6_pjuso")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform3" unique_id=59336888]
-shape = SubResource("CircleShape2D_pjuso")
+[node name="Area2D" type="Area2D" parent="Rotating platform3" unique_id=2017395438]
+z_index = 3
+position = Vector2(1, -2)
+script = ExtResource("8_yysqy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Rotating platform3/Area2D" unique_id=56380690]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_yysqy")
+
+[node name="Rotating platform8" type="AnimatableBody2D" parent="." unique_id=44354532]
+position = Vector2(188, 123)
+script = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform8" unique_id=800482721]
+scale = Vector2(-2.591241, -2.591241)
+shape = SubResource("CircleShape2D_n5t1e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotating platform8" unique_id=1690334889]
+position = Vector2(1, 0)
+scale = Vector2(0.29500097, 0.2589643)
+texture = ExtResource("6_pjuso")
+
+[node name="Area2D" type="Area2D" parent="Rotating platform8" unique_id=633620736]
+z_index = 3
+position = Vector2(1, -2)
+script = ExtResource("8_yysqy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Rotating platform8/Area2D" unique_id=2125729794]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_yysqy")
+
+[node name="Rotating platform9" type="AnimatableBody2D" parent="." unique_id=1757558364]
+position = Vector2(223, 120)
+rotation = 0.49741885
+script = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform9" unique_id=1283388829]
+scale = Vector2(-2.591241, -2.591241)
+shape = SubResource("CircleShape2D_n5t1e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotating platform9" unique_id=1487018314]
+position = Vector2(1, 0)
+scale = Vector2(0.29500097, 0.2589643)
+texture = ExtResource("6_pjuso")
+
+[node name="Area2D" type="Area2D" parent="Rotating platform9" unique_id=1643426541]
+z_index = 3
+position = Vector2(1, -2)
+script = ExtResource("8_yysqy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Rotating platform9/Area2D" unique_id=1385002875]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_yysqy")
+
+[node name="Rotating platform10" type="AnimatableBody2D" parent="." unique_id=976590556]
+position = Vector2(529.00006, 282.00003)
+rotation = 0.74700093
+scale = Vector2(2.3182902, 2.3182902)
+script = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform10" unique_id=574386803]
+scale = Vector2(-2.591241, -2.591241)
+shape = SubResource("CircleShape2D_n5t1e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotating platform10" unique_id=16052451]
+position = Vector2(1, 0)
+scale = Vector2(0.29500097, 0.2589643)
+texture = ExtResource("6_pjuso")
+
+[node name="Area2D" type="Area2D" parent="Rotating platform10" unique_id=294233283]
+z_index = 3
+position = Vector2(1, -2)
+script = ExtResource("8_yysqy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Rotating platform10/Area2D" unique_id=1301053321]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_yysqy")
+
+[node name="Rotating platform11" type="AnimatableBody2D" parent="." unique_id=898819045]
+position = Vector2(495, 332.00003)
+rotation = 1.4940019
+scale = Vector2(1.75653, 1.75653)
+script = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform11" unique_id=889075234]
+scale = Vector2(-2.591241, -2.591241)
+shape = SubResource("CircleShape2D_n5t1e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotating platform11" unique_id=1683694790]
+position = Vector2(1, 0)
+scale = Vector2(0.29500097, 0.2589643)
+texture = ExtResource("6_pjuso")
+
+[node name="Area2D" type="Area2D" parent="Rotating platform11" unique_id=1943922531]
+z_index = 3
+position = Vector2(1, -2)
+script = ExtResource("8_yysqy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Rotating platform11/Area2D" unique_id=1747924937]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_yysqy")
+
+[node name="Rotating platform7" type="AnimatableBody2D" parent="." unique_id=1714719949]
+position = Vector2(281.00003, 241)
+rotation = 0.49741885
+scale = Vector2(1.448187, 1.448187)
+script = ExtResource("4_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rotating platform7" unique_id=1880923997]
+scale = Vector2(-2.591241, -2.591241)
+shape = SubResource("CircleShape2D_n5t1e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotating platform7" unique_id=184028913]
+position = Vector2(1, 0)
+scale = Vector2(0.29500097, 0.2589643)
+texture = ExtResource("6_pjuso")
+
+[node name="Area2D" type="Area2D" parent="Rotating platform7" unique_id=1317266264]
+z_index = 3
+position = Vector2(1, -2)
+script = ExtResource("8_yysqy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Rotating platform7/Area2D" unique_id=1259241094]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_yysqy")
 
 [node name="Rotating platform4" type="AnimatableBody2D" parent="." unique_id=151420114]
 position = Vector2(189, 123)
@@ -1463,3 +1598,10 @@ sprite_frames = SubResource("SpriteFrames_1iygd")
 animation = &"Lver on"
 frame = 4
 frame_progress = 0.14993377
+
+[connection signal="body_entered" from="Rotating platform3/Area2D" to="Rotating platform3/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Rotating platform8/Area2D" to="Rotating platform8/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Rotating platform9/Area2D" to="Rotating platform9/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Rotating platform10/Area2D" to="Rotating platform10/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Rotating platform11/Area2D" to="Rotating platform11/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Rotating platform7/Area2D" to="Rotating platform7/Area2D" method="_on_body_entered"]

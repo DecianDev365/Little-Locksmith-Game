@@ -7,8 +7,12 @@ const JUMP_VELOCITY = -400.0
 var jumps_left = 2
 var was_on_floor = false
 var is_hitting = false
+var start_position: Vector2
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	start_position = global_position
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -55,3 +59,26 @@ func play_hit() -> void:
 	animated_sprite.play("HIT")
 	await animated_sprite.animation_finished
 	is_hitting = false
+
+var is_respawning = false
+
+func respawn() -> void:
+	if is_respawning:
+		return
+
+	is_respawning = true
+	visible = false
+	set_physics_process(false)
+
+	await get_tree().create_timer(0.4).timeout
+
+	global_position = start_position
+	velocity = Vector2.ZERO
+	jumps_left = 2
+	was_on_floor = false
+	is_hitting = false
+
+	visible = true
+	animated_sprite.play("IDLE")
+	set_physics_process(true)
+	is_respawning = false
