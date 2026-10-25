@@ -405,6 +405,8 @@
 [ext_resource type="Texture2D" uid="uid://byddtvtvrc2qq" path="res://Assets/Videos/extract-frames-from-video-1792942908666 2/Intro_LORE-0402.png" id="403_p81lk"]
 [ext_resource type="Texture2D" uid="uid://chmekicxlwc0r" path="res://Assets/Videos/extract-frames-from-video-1792942908666 2/Intro_LORE-0403.png" id="404_muqn2"]
 [ext_resource type="Texture2D" uid="uid://mi84w8cap6sm" path="res://Assets/Videos/extract-frames-from-video-1792942908666 2/Intro_LORE-0404.png" id="405_83tc8"]
+[ext_resource type="AudioStream" uid="uid://6hyp6mj1mdbd" path="res://freesound_community-mamie_gibberish_2-95772.mp3" id="406_l7r1f"]
+[ext_resource type="Script" uid="uid://swm83gaf48aq" path="res://talking_audio.gd" id="407_cr08r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hmkqn"]
 animations = [{
@@ -1636,3 +1638,8 @@ scale = Vector2(0.60077244, 0.60077244)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1675744489]
 sprite_frames = SubResource("SpriteFrames_hmkqn")
 animation = &"Playing"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sprite2D" unique_id=931761292]
+stream = ExtResource("406_l7r1f")
+autoplay = true
+script = ExtResource("407_cr08r")
