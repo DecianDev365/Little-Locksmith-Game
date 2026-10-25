@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bakmfpwipcjjh" path="res://Assets/Free Industrial Zone Tileset/chars /Dwarf Sprite Sheet 1.3v.png" id="2_23xmf"]
 [ext_resource type="Texture2D" uid="uid://daduduvj7wdod" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_27.png" id="3_1yv1y"]
 [ext_resource type="Script" uid="uid://umgdiqj8bpgb" path="res://moving_platform.gd" id="3_h2yge"]
+[ext_resource type="AudioStream" uid="uid://c7ki51d77fabw" path="res://blendertimer-person-running-loop-245173.mp3" id="3_sn1fb"]
 [ext_resource type="Script" uid="uid://08dw45q1rhpb" path="res://rotating_platform.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bgan8m2q0m8yv" path="res://moving_platform_3.gd" id="5_23xmf"]
 [ext_resource type="Texture2D" uid="uid://col1kc6kmcxnk" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_01.png" id="6_5yh34"]
@@ -1194,6 +1195,10 @@ scale = Vector2(1.6423861, 1.9500625)
 sprite_frames = SubResource("SpriteFrames_d5iia")
 animation = &"DIE"
 frame_progress = 0.33846402
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="LockSmith" unique_id=879137373]
+stream = ExtResource("3_sn1fb")
+volume_db = 7.776
 
 [node name="platforms" type="StaticBody2D" parent="." unique_id=543781631]
 

@@ -1,4 +1,3 @@
-
 extends CharacterBody2D
 
 const SPEED = 300.0
@@ -8,11 +7,14 @@ var jumps_left = 2
 var was_on_floor = false
 var is_hitting = false
 var start_position: Vector2
+var is_respawning = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var walking_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	start_position = global_position
+	walking_sound.finished.connect(_on_walking_sound_finished)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -38,37 +40,46 @@ func _physics_process(delta: float) -> void:
 	was_on_floor = is_on_floor()
 
 	if is_hitting:
+		walking_sound.stop()
 		return
 
 	if Input.is_key_pressed(KEY_D):
+		walking_sound.stop()
 		play_hit()
 		return
 
 	if not is_on_floor():
+		walking_sound.stop()
 		if velocity.y < 0:
 			animated_sprite.play("JUMP")
 		else:
 			animated_sprite.play("fall")
 	elif abs(velocity.x) > 10:
 		animated_sprite.play("WALKING")
+		if not walking_sound.playing:
+			walking_sound.play()
 	else:
+		walking_sound.stop()
 		animated_sprite.play("IDLE")
+
+func _on_walking_sound_finished() -> void:
+	if is_on_floor() and abs(velocity.x) > 10 and not is_hitting and not is_respawning:
+		walking_sound.play()
 
 func play_hit() -> void:
 	is_hitting = true
+	walking_sound.stop()
 	animated_sprite.play("HIT")   ## Even playn retro games hit hard uk 
 	get_tree().call_group("lever", "activate_lever")
 	await animated_sprite.animation_finished
 	is_hitting = false
-	
-
-var is_respawning = false
 
 func respawn() -> void:
 	if is_respawning:
 		return
 
 	is_respawning = true
+	walking_sound.stop()
 	visible = false
 	set_physics_process(false)
 
@@ -84,5 +95,5 @@ func respawn() -> void:
 	animated_sprite.play("IDLE")
 	set_physics_process(true)
 	is_respawning = false
-	
+
 	##Hollow knight is a good game ngl
