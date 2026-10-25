@@ -57,8 +57,10 @@ func _physics_process(delta: float) -> void:
 func play_hit() -> void:
 	is_hitting = true
 	animated_sprite.play("HIT")
+	get_tree().call_group("lever", "activate_lever")
 	await animated_sprite.animation_finished
 	is_hitting = false
+	
 
 var is_respawning = false
 
