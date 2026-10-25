@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var destination: Vector2 = Vector2(16.56, -767.2)
+@export var destination: Vector2 = Vector2(10.56, -767.2)
 
 @onready var portal_sprite: Sprite2D = $Sprite2D
 

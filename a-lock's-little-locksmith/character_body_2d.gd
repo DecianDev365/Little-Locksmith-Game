@@ -10,12 +10,11 @@ var start_position: Vector2
 var is_respawning = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var walking_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var walking_sound: AudioStreamPlayer2D = $walking_sound
 
 func _ready() -> void:
 	start_position = global_position
-	walking_sound.finished.connect(_on_walking_sound_finished)
-
+	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
