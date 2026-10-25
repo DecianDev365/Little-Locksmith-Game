@@ -5,7 +5,7 @@ extends AnimatableBody2D
 
 
 var start_y: float
-var time_passed: float = 0.0
+var time_passed: float = 0.0   ## I like Float , for no obv reasns 
 
 func _ready() -> void:
 	start_y = position.y
